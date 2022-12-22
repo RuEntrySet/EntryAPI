@@ -9,7 +9,7 @@ version = "1.0.0"
 
 publishing {
     repositories {
-        maven("https://maven.pkg.github.com/RuEntrySet/maven") {
+        maven("https://maven.pkg.github.com/RuEntrySet/EntryAPI/") {
             name = "GitHubPackages"
             credentials {
                 username = System.getenv("GITHUB_USERNAME")
