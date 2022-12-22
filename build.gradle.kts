@@ -30,11 +30,12 @@ repositories {
 }
 
 dependencies {
+
+    implementation("com.zaxxer:HikariCP:4.0.3")
+
     compileOnly("org.projectlombok:lombok:1.18.22")
 
     annotationProcessor("org.projectlombok:lombok:1.18.22")
-
-    implementation("com.zaxxer:HikariCP:4.0.3")
 }
 
 tasks.withType<JavaCompile> {
