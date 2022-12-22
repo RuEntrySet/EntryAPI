@@ -1,6 +1,6 @@
 plugins {
     java
-    id("maven-publish")
+    `maven-publish`
     id("com.github.johnrengelman.shadow") version ("6.1.0")
 }
 
@@ -9,17 +9,17 @@ version = "1.0.0"
 
 publishing {
     repositories {
-        maven("https://maven.pkg.github.com/RuEntrySet/EntryAPI/") {
+        maven {
             name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/RuEntrySet/EntryAPI")
             credentials {
-                username = System.getenv("GITHUB_USERNAME")
-                password = System.getenv("GITHUB_PASSWORD")
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_PASSWORD")
             }
         }
     }
-
     publications {
-        create<MavenPublication>("mavenJava") {
+        register<MavenPublication>("gpr") {
             from(components["java"])
         }
     }
