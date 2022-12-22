@@ -1,2 +1,2 @@
-rootProject.name = "EntryAPI"
+rootProject.name = "api"
 
