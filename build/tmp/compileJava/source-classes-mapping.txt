@@ -8,5 +8,3 @@ ru/entryset/api/util/function/SafeFunction.java
  ru.entryset.api.util.function.SafeFunction
 ru/entryset/api/util/function/SafeConsumer.java
  ru.entryset.api.util.function.SafeConsumer
-ru/entryset/api/database/mysql/test.java
- ru.entryset.api.database.mysql.test
