@@ -1,7 +1,7 @@
 # Entry API
 
 ### Реализованные утилиты
-* [Утилита для работы с базой данных](src/main/java/ru/hyperspacemc/api/database/README.md)
+* [Утилита для работы с базой данных](src/main/java/ru/entryset/api/database/README.md)
 
 ### Подключение библиотеки
 #### build.gradle
@@ -12,7 +12,7 @@ repositories {
         url = uri("https://maven.pkg.github.com/RuEntrySet/EntryAPI")
         credentials {
             username = "RuEntrySet"
-            password = "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"
+            password = "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"
         }
     }
 }
