@@ -20,7 +20,7 @@ import java.util.concurrent.CompletionException;
 /**
  * Общий класс для всех реализаций базы данных.
  *
- * @author Erelima
+ * @author EntrySet
  */
 @NoArgsConstructor(
         access = AccessLevel.PROTECTED
