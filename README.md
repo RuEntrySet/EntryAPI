@@ -12,7 +12,7 @@ repositories {
         url = uri("https://maven.pkg.github.com/RuEntrySet/EntryAPI")
         credentials {
             username = "RuEntrySet"
-            password = "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"
+            password = "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"
         }
     }
 }
