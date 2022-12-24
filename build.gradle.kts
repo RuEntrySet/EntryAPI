@@ -23,7 +23,7 @@ publishing {
             from(components["java"])
         }
     }
-}
+} 
 
 repositories {
     mavenCentral()
