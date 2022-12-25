@@ -11,7 +11,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 
-public class ConfigurationFile implements ConfigurationMap {
+public class Configuration implements ConfigurationMap {
 
     private final JavaPlugin instance;
 
@@ -19,7 +19,7 @@ public class ConfigurationFile implements ConfigurationMap {
 
     private YamlConfiguration file;
 
-    public ConfigurationFile(JavaPlugin plugin, String fileName){
+    public Configuration(JavaPlugin plugin, String fileName){
         this.instance = plugin;
         setFileName(fileName);
         setFile(getFile(fileName));

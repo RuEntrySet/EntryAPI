@@ -3,9 +3,9 @@ package ru.entryset.api.configuration;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.entryset.api.database.mysql.MysqlDatabase;
 
-public class BukkitConfig extends ConfigurationFile {
+public class Config extends Configuration {
 
-    public BukkitConfig(JavaPlugin plugin, String fileName) {
+    public Config(JavaPlugin plugin, String fileName) {
         super(plugin, fileName);
     }
 

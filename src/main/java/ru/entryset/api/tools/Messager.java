@@ -5,21 +5,21 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import ru.entryset.api.configuration.BukkitConfig;
+import ru.entryset.api.configuration.Config;
 
 public class Messager {
 
-    BukkitConfig config;
+    Config config;
 
-    public Messager(BukkitConfig config){
+    public Messager(Config config){
         this.config = config;
     }
 
-    public BukkitConfig getConfig() {
+    public Config getConfig() {
         return config;
     }
 
-    public void setConfig(BukkitConfig config) {
+    public void setConfig(Config config) {
         if(config == null){
             return;
         }
