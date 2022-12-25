@@ -1,6 +1,5 @@
 package ru.entryset.api.configuration;
 
-import com.sun.istack.internal.NotNull;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
