@@ -8,6 +8,10 @@ version = "1.0.0"
 
 repositories {
     mavenCentral()
+    /*spigot repository*/
+    maven("https://hub.spigotmc.org/nexus/content/repositories/public/")
+    /*PlaceholderAPI repository*/
+    maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
 }
 
 publishing {
@@ -30,6 +34,13 @@ publishing {
 }
 
 dependencies {
+
+    //spigot dependence
+    compileOnly("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
+    //
+
+    // PlaceholderAPI
+    compileOnly("me.clip:placeholderapi:2.10.9")
 
     implementation("com.zaxxer:HikariCP:4.0.3")
 
