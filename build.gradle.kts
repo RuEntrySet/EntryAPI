@@ -35,10 +35,10 @@ publishing {
 
 dependencies {
 
-    //spigot dependence
+    // spigot dependence
     compileOnly("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
-    //
-
+    // redis
+    implementation("redis.clients:jedis:4.2.0")
     // PlaceholderAPI
     compileOnly("me.clip:placeholderapi:2.10.9")
 
