@@ -1,6 +1,5 @@
 package ru.entryset.api.configuration;
 
-import com.sun.istack.internal.NotNull;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -64,73 +63,61 @@ public class Configuration implements ConfigurationMap {
     }
 
     @Override
-    @NotNull
     public String getString(String source) {
         return getConfiguration().getString(source);
     }
 
     @Override
-    @NotNull
     public int getInt(String source) {
         return getConfiguration().getInt(source);
     }
 
     @Override
-    @NotNull
     public double getDouble(String source) {
         return getConfiguration().getDouble(source);
     }
 
     @Override
-    @NotNull
     public boolean getBoolean(String source) {
         return getConfiguration().getBoolean(source);
     }
 
     @Override
-    @NotNull
     public List<String> getStringList(String source) {
         return getConfiguration().getStringList(source);
     }
 
     @Override
-    @NotNull
     public List<Boolean> getBooleanList(String source) {
         return getConfiguration().getBooleanList(source);
     }
 
-    @NotNull
     @Override
     public List<Integer> getIntegerList(String source) {
         return getConfiguration().getIntegerList(source);
     }
 
     @Override
-    @NotNull
     public List<Long> getLongList(String source) {
         return getConfiguration().getLongList(source);
     }
 
     @Override
-    @NotNull
     public ConfigurationSection getConfigurationSection(String source) {
         return getConfiguration().getConfigurationSection(source);
     }
 
     @Override
-    @NotNull
     public ItemStack getItemStack(String source) {
         return getConfiguration().getItemStack(source);
     }
 
     @Override
-    @NotNull
     public Location getLocation(String source) {
         return getConfiguration().getLocation(source);
     }
 
     @Override
-    @NotNull
     public void set(String source, Object object) {
         getConfiguration().set(source, object);
         setFile(getFile(getFileName()));

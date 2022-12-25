@@ -14,7 +14,6 @@ public interface ConfigurationMap {
      *
      * @return string
      */
-    @NotNull
     String getString(String source);
 
     /**
@@ -22,7 +21,6 @@ public interface ConfigurationMap {
      *
      * @return int
      */
-    @NotNull
     int getInt(String source);
 
     /**
@@ -30,7 +28,6 @@ public interface ConfigurationMap {
      *
      * @return double
      */
-    @NotNull
     double getDouble(String source);
 
     /**
@@ -38,7 +35,6 @@ public interface ConfigurationMap {
      *
      * @return boolean
      */
-    @NotNull
     boolean getBoolean(String source);
 
     /**
@@ -46,14 +42,12 @@ public interface ConfigurationMap {
      *
      * @return List<String>
      */
-    @NotNull
     List<String> getStringList(String source);
     /**
      * Возвращает List<String> из конфига
      *
      * @return List<Boolean>
      */
-    @NotNull
     List<Boolean> getBooleanList(String source);
 
     /**
@@ -61,7 +55,6 @@ public interface ConfigurationMap {
      *
      * @return List<Integer>
      */
-    @NotNull
     List<Integer> getIntegerList(String source);
 
 
@@ -70,7 +63,6 @@ public interface ConfigurationMap {
      *
      * @return List<Long>
      */
-    @NotNull
     List<Long> getLongList(String source);
 
 
@@ -79,7 +71,6 @@ public interface ConfigurationMap {
      *
      * @return ConfigurationSection
      */
-    @NotNull
     ConfigurationSection getConfigurationSection(String source);
 
     /**
@@ -87,7 +78,6 @@ public interface ConfigurationMap {
      *
      * @return ItemStack
      */
-    @NotNull
     ItemStack getItemStack(String source);
 
     /**
@@ -95,7 +85,6 @@ public interface ConfigurationMap {
      *
      * @return Location
      */
-    @NotNull
     Location getLocation(String source);
 
     /**
@@ -103,7 +92,6 @@ public interface ConfigurationMap {
      *
      * @return Location
      */
-    @NotNull
     void set(String source, Object object);
 
 }
