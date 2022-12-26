@@ -28,6 +28,10 @@ public class Config extends Configuration {
         );
     }
 
+    public String getSettings(String source){
+        return getString("settings." + source);
+    }
+
     public String getMessage(String source){
         return getString("messages." + source);
     }
