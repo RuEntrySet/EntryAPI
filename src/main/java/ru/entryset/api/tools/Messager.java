@@ -124,4 +124,16 @@ public class Messager {
         }
         return finalText.toString();
     }
+
+    public static int getVersion() {
+        int result = 7;
+        for(int inner = 8; inner <= 20; inner++){
+            if(Bukkit.getVersion().contains("1." + String.valueOf(inner))){
+                result = inner;
+                break;
+            }
+        }
+        return result;
+    }
+
 }
