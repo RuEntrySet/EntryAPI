@@ -30,7 +30,7 @@ public class Messager {
         if(p.hasPermission(permission)) {
             return true;
         }
-        sendMessage(p, getConfig().getMessage("no_permission").replace("<permission>", permission), true);
+        sendMessage(p, getConfig().getMessage("no_permission").replace("<permission>", permission));
         return false;
 
     }
