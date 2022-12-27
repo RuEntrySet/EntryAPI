@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "ru.entryset"
-version = "3.2.3"
+version = "3.2.4"
 
 repositories {
     mavenCentral()

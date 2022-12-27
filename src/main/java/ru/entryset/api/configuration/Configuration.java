@@ -23,9 +23,9 @@ public class Configuration implements ConfigurationMap {
 
     public Configuration(JavaPlugin plugin, String fileName){
         this.instance = plugin;
+        this.uuid = UUID.randomUUID();
         setFileName(fileName);
         setFile(getFile(fileName));
-        this.uuid = UUID.randomUUID();
     }
 
     public void setFileName(String fileName) {
