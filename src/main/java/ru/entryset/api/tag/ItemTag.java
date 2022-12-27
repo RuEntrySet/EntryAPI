@@ -5,6 +5,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.plugin.java.JavaPlugin;
 import ru.entryset.api.tools.Messager;
 import ru.entryset.api.tools.NMSUtils;
 
@@ -14,12 +15,12 @@ import java.util.Objects;
 
 public class ItemTag {
 
-    public static void setTag(ItemStack stack, String key, String source)
+    public static void setTag(JavaPlugin plugin, ItemStack stack, String key, String source)
             throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
 
         if(Messager.getVersion() > 13){
             ItemMeta meta = stack.getItemMeta();
-            Objects.requireNonNull(meta).getPersistentDataContainer().set(Objects.requireNonNull(NamespacedKey.fromString(key))
+            Objects.requireNonNull(meta).getPersistentDataContainer().set(Objects.requireNonNull(NamespacedKey.fromString(key, plugin))
                     , PersistentDataType.STRING, source);
             stack.setItemMeta(meta);
             return;
@@ -54,14 +55,14 @@ public class ItemTag {
         stack = (ItemStack) asBukkitCopyMethod.invoke(null, objectNMSItemStack);
     }
 
-    public static String getTag(ItemStack stack, String key)
+    public static String getTag(JavaPlugin plugin, ItemStack stack, String key)
             throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
 
         if(Messager.getVersion() > 13){
             ItemMeta meta = stack.getItemMeta();
             PersistentDataContainer container = Objects.requireNonNull(meta).getPersistentDataContainer();
-            if(container.has(Objects.requireNonNull(NamespacedKey.fromString(key)), PersistentDataType.STRING)){
-                return container.get(Objects.requireNonNull(NamespacedKey.fromString(key)), PersistentDataType.STRING);
+            if(container.has(Objects.requireNonNull(NamespacedKey.fromString(key, plugin)), PersistentDataType.STRING)){
+                return container.get(Objects.requireNonNull(NamespacedKey.fromString(key, plugin)), PersistentDataType.STRING);
             }
             return null;
         }
