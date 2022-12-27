@@ -15,7 +15,7 @@ import java.util.Objects;
 
 public class ItemTag {
 
-    public static void setTag(JavaPlugin plugin, ItemStack stack, String key, String source)
+    public static ItemStack setTag(JavaPlugin plugin, ItemStack stack, String key, String source)
             throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
 
         if(Messager.getVersion() > 13){
@@ -23,7 +23,7 @@ public class ItemTag {
             Objects.requireNonNull(meta).getPersistentDataContainer().set(Objects.requireNonNull(NamespacedKey.fromString(key, plugin))
                     , PersistentDataType.STRING, source);
             stack.setItemMeta(meta);
-            return;
+            return stack;
         }
 
         Class<?> nmsCraftItemStack = NMSUtils.getOBC("inventory.CraftItemStack");
@@ -52,7 +52,7 @@ public class ItemTag {
 
         //assign net.minecraft.server.<version>.ItemStack to stack
         Method asBukkitCopyMethod = nmsCraftItemStack.getDeclaredMethod("asBukkitCopy", nmsItemStack);
-        stack = (ItemStack) asBukkitCopyMethod.invoke(null, objectNMSItemStack);
+        return (ItemStack) asBukkitCopyMethod.invoke(null, objectNMSItemStack);
     }
 
     public static String getTag(JavaPlugin plugin, ItemStack stack, String key)
