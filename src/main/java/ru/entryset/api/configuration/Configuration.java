@@ -9,10 +9,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
 public class Configuration implements ConfigurationMap {
 
     private final JavaPlugin instance;
+
+    private final UUID uuid;
 
     private String fileName;
 
@@ -22,6 +25,7 @@ public class Configuration implements ConfigurationMap {
         this.instance = plugin;
         setFileName(fileName);
         setFile(getFile(fileName));
+        this.uuid = UUID.randomUUID();
     }
 
     public void setFileName(String fileName) {
@@ -47,17 +51,17 @@ public class Configuration implements ConfigurationMap {
         return this.instance;
     }
 
-    public static HashMap<String, YamlConfiguration> cache = new HashMap<>();
+    public static HashMap<UUID, YamlConfiguration> cache = new HashMap<>();
 
     public YamlConfiguration getFile(String fileName) {
-        YamlConfiguration configuration = cache.get(fileName);
+        YamlConfiguration configuration = cache.get(this.uuid);
         if(configuration == null){
             File file = new File(getInstance().getDataFolder(), fileName);
             if (!file.exists()) {
                 getInstance().saveResource(fileName, false);
             }
             configuration = YamlConfiguration.loadConfiguration(file);
-            cache.put(fileName, configuration);
+            cache.put(this.uuid, configuration);
         }
         return configuration;
     }
