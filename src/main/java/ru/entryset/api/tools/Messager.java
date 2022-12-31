@@ -1,6 +1,8 @@
 package ru.entryset.api.tools;
 
 import me.clip.placeholderapi.PlaceholderAPI;
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -90,7 +92,7 @@ public class Messager {
     }
 
     public void sendAction(Player player, String text){
-        player.sendTitle("", color(text));
+        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(color(text)));
     }
 
     public static final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";
